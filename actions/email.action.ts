@@ -1,6 +1,7 @@
 'use server';
 
 import nodemailer from 'nodemailer';
+import { resolve } from 'path';
 
 export const sendEmail = async (
   email: string,
@@ -34,20 +35,27 @@ export const sendEmail = async (
     },
   });
 
-  transporter.sendMail(emailMessage, (err, info) => {
-    console.log(err);
-    if (err) {
-      return JSON.parse(
-        JSON.stringify({
-          error: `Connection refused`,
-        })
-      );
-    } else {
-      return JSON.parse(
+  await new Promise((resolve, reject) => {
+    transporter.sendMail(emailMessage, (err, info) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(info);
+      }
+    });
+  })
+    .then((info: any) =>
+      JSON.parse(
         JSON.stringify({
           message: `Message delivered to ${info.accepted}`,
         })
-      );
-    }
-  });
+      )
+    )
+    .catch((err) =>
+      JSON.parse(
+        JSON.stringify({
+          error: `Connection refused`,
+        })
+      )
+    );
 };

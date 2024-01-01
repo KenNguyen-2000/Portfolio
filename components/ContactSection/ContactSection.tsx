@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent } from 'react';
+import { FormEvent, useState } from 'react';
 import { Footer } from '..';
 import { ADDRESS, emailAddress } from '../../shared/data';
 import './ContactSection.styles.scss';
@@ -14,6 +14,7 @@ const ContactSection = () => {
     handleChange,
     formReset,
   } = useContactForm();
+  const [isLoading, setLoading] = useState(false);
 
   const handleSendEmail = async (e: FormEvent) => {
     e.preventDefault();
@@ -22,7 +23,7 @@ const ContactSection = () => {
       alert('Please fill all fields');
       return;
     }
-
+    setLoading(true);
     try {
       await sendEmail(email, name, message);
       formReset();
@@ -34,6 +35,7 @@ const ContactSection = () => {
         position: 'top-center',
       });
     }
+    setLoading(false);
   };
   return (
     <section id="contact" className="contact-wrapper flex flex-col">
@@ -97,7 +99,13 @@ const ContactSection = () => {
                   />
                 </div>
                 <div className="input-group submit animate-item">
-                  <button type="submit">Send</button>
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="disabled:opacity-80 cursor-not-allowed"
+                  >
+                    Send
+                  </button>
                 </div>
               </form>
             </div>

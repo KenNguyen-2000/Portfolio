@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
+import 'react-toastify/dist/ReactToastify.css';
 import './globals.scss';
 import { ToastContainer } from 'react-toastify';
 import ReactParallaxProvider from '@/hoc/ReactParallaxProvider';
@@ -24,7 +25,7 @@ export default function RootLayout({
         <ReactParallaxProvider>
           {children}
 
-          <ToastContainer style={{ fontSize: '16px' }}></ToastContainer>
+          <ToastContainer style={{ fontSize: '16px' }} />
         </ReactParallaxProvider>
       </body>
     </html>
