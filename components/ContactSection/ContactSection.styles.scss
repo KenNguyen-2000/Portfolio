@@ -1,0 +1,228 @@
+.contact-wrapper {
+  background: url('/testimonial-bg.jpg') no-repeat center center / cover;
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  & .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 21, 25, 0.9);
+  }
+}
+
+.contact-section {
+  padding: 120px 0;
+
+  .section-title {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 55px;
+    h2 {
+      text-transform: uppercase;
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.contact-form-wrapper {
+  z-index: 2;
+  position: relative;
+  display: flex;
+  max-width: 960px;
+  margin: 0 auto;
+  justify-content: space-between;
+
+  .address {
+    width: 50%;
+    padding-right: 20px;
+
+    address {
+      margin-bottom: 0;
+    }
+
+    &-label {
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: roboto;
+      letter-spacing: 1px;
+      display: block;
+      transition: all 1.2s ease;
+      transform: translateY(30px);
+      opacity: 0;
+      visibility: hidden;
+      &.animated {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &-content {
+      transform: translateY(30px);
+      opacity: 0;
+      visibility: hidden;
+      color: #fff;
+      font-size: 20px;
+      max-width: 300px;
+      margin: 0;
+      margin-top: 12px;
+      transition: all 1.2s ease 0.3s;
+      &.animated {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .email {
+    &-label {
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: roboto;
+      letter-spacing: 1px;
+      display: block;
+      margin-top: 40px;
+      transition: all 1.2s ease 0.6s;
+      transform: translateY(30px);
+      opacity: 0;
+      visibility: hidden;
+      &.animated {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    color: #f43534;
+    transition: all 1.2s ease 0.8s;
+    transform: translateY(30px);
+    opacity: 0;
+    visibility: hidden;
+    &.animated {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.contact-form {
+  width: 50%;
+  padding-left: 20px;
+
+  label {
+    text-transform: capitalize;
+    font-size: 16px;
+    color: #555;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  input {
+    border: none;
+    border-bottom: 1px solid #333;
+    padding-left: 0;
+    padding-right: 0;
+    color: #ccc;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  textarea {
+    border: none;
+    border-bottom: 1px solid #333;
+    padding-left: 0;
+    padding-right: 0;
+    color: #ccc;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 12px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.input-group {
+  transform: translateY(30px);
+  opacity: 0;
+  visibility: hidden;
+  &.name {
+    transition: all 1.2s ease 0.5s;
+  }
+
+  &.email {
+    transition: all 1.2s ease 0.7s;
+  }
+
+  &.msg {
+    transition: all 1.2s ease 0.9s;
+  }
+
+  &.submit {
+    transition: all 1.2s ease 1s;
+  }
+
+  &.animated {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 1200px) {
+  .contact-section {
+    padding: 100px 0;
+  }
+
+  .contact-form-wrapper {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 991px) {
+  .contact-section {
+    .section-title {
+      h2 {
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 44px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-form-wrapper {
+    display: block;
+  }
+
+  .address {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .contact-form {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .contact-section {
+    padding: 70px 0;
+
+    .section-title {
+      h2 {
+        font-size: 28px;
+      }
+    }
+  }
+}

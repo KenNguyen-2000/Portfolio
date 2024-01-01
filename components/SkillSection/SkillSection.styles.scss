@@ -1,0 +1,106 @@
+.skill-section {
+  // background-image: url('../../assets/service-bg.jpg');
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: center;
+  background: #16171b;
+  padding: 108px 0 160px;
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+
+  .section-title {
+    position: relative;
+    transform: translate(0);
+    top: 0;
+    left: 0;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 120px;
+    color: #16171b;
+    text-shadow:
+      -1px -1px 0 #26272d,
+      1px -1px 0 #26272d,
+      -1px 1px 0 #26272d,
+      1px 1px 0 #26272d;
+    z-index: 2;
+    font-weight: 700;
+    line-height: 1;
+  }
+}
+
+.skill-wrapper {
+  position: relative;
+  max-width: 1170px;
+  margin: 0 auto;
+  z-index: 2;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  .vertical-line {
+    display: block;
+    height: calc(100% + 80px);
+    width: 2px;
+    background: #f43534;
+    position: absolute;
+    left: 50%;
+    margin-left: -1px;
+    top: -40px;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 100%;
+      background: #f43534;
+      left: -7px;
+      top: 0;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 100%;
+      background: #f43534;
+      left: -7px;
+      bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .skill-wrapper {
+    .section-title {
+      font-size: 90px;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .skill-section {
+    padding: 90px 0;
+    .vertical-line {
+      left: 0;
+      margin-left: 0;
+    }
+
+    .section-title {
+      font-size: 62px;
+    }
+  }
+
+  .skill-wrapper {
+    display: block;
+    max-width: 510px;
+  }
+}
+
+@media (max-width: 575px) {
+  .skill-section {
+    padding: 65px 0;
+  }
+}

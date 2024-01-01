@@ -1,0 +1,64 @@
+.main-wrapper {
+  flex: 1 1 0%;
+}
+
+.vertical-line {
+  background: #26272d;
+  width: 1px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  @for $i from 1 through 5 {
+    &.line-#{$i} {
+      left: calc(100% / 6 * $i);
+    }
+  }
+}
+
+.scroll-top {
+  background: #f43534;
+  border-radius: 3px;
+  bottom: 50px;
+  cursor: pointer;
+  height: 40px;
+  position: fixed;
+  right: 30px;
+  text-align: center;
+  width: 40px;
+  z-index: 9;
+}
+
+@media (max-width: 1200px) {
+  .vertical-line {
+    @for $i from 4 through 5 {
+      &.line-#{$i} {
+        display: none;
+      }
+    }
+
+    @for $i from 1 through 3 {
+      &.line-#{$i} {
+        left: calc(100% / 4 * $i);
+      }
+    }
+  }
+
+  .scroll-top {
+    bottom: 90px;
+  }
+}
+
+@media (max-width: 575px) {
+  .vertical-line {
+    &.line-3 {
+      display: none;
+    }
+
+    @for $i from 1 through 2 {
+      &.line-#{$i} {
+        left: calc(100% / 3 * $i);
+      }
+    }
+  }
+}

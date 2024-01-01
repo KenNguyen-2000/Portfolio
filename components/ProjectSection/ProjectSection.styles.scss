@@ -1,0 +1,121 @@
+.projects-section {
+  background: url('/project-bg.jpg') no-repeat fixed center bottom/cover;
+  position: relative;
+  min-height: 100vh;
+  padding: 100px 0 146px;
+  overflow: hidden;
+  position: relative;
+  & .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 21, 25, 0.6);
+  }
+
+  .section-title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    font-size: 120px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1;
+    color: rgba(78, 78, 78, 0.2);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #333;
+    top: 30%;
+  }
+}
+
+.projects-title {
+  text-align: center;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(78, 78, 78, 0.2);
+  transform: translateY(-10px);
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #333;
+  @apply text-5xl lg:text-6xl xl:text-9xl;
+}
+
+.projects-wrapper {
+  z-index: 2;
+  position: relative;
+}
+
+@media screen and (min-width: 1280px) {
+  .content-img {
+    width: 60%;
+  }
+  .content-details {
+    width: 40%;
+  }
+  .projects-wrapper {
+    padding: 120px 0 191px;
+    .section-title {
+      font-size: 90px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .content-img::before {
+    display: block;
+  }
+  .projects-content-wrapper {
+    flex-direction: row;
+  }
+
+  .projects-container {
+    padding-right: 80px;
+  }
+
+  .content-details {
+    width: 45%;
+  }
+  .content-img {
+    width: 55%;
+    margin-bottom: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .skill-wrapper {
+    display: block;
+    max-width: 510px;
+  }
+}
+
+@media (max-width: 767px) {
+  .projects-section {
+    .section-title {
+      position: relative;
+      top: inherit;
+      left: inherit;
+      transform: inherit !important;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  }
+
+  .projects-wrapper {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  .projects-section {
+    padding: 62px 0 66px;
+    .section-title {
+      font-size: 50px;
+    }
+  }
+}
