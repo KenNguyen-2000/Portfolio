@@ -1,18 +1,18 @@
 'use client';
 
-import { FormEvent, useState } from 'react';
+import { FormEvent } from 'react';
 import { Footer } from '..';
 import { ADDRESS, emailAddress } from '../../shared/data';
 import './ContactSection.styles.scss';
 import { toast } from 'react-toastify';
 import useContactForm from '@/hooks/useContactForm';
-import axios from 'axios';
 import { sendEmail } from '@/actions/email.action';
 
 const ContactSection = () => {
   const {
     values: { email, name, message },
     handleChange,
+    formReset,
   } = useContactForm();
 
   const handleSendEmail = async (e: FormEvent) => {
@@ -24,10 +24,15 @@ const ContactSection = () => {
     }
 
     try {
-      const req = await sendEmail(email, name, message);
-      console.log(req);
+      await sendEmail(email, name, message);
+      formReset();
+      toast.success('Email sent successfully!', {
+        position: 'top-center',
+      });
     } catch (e) {
-      console.log(e);
+      toast.error('Sent email failure!', {
+        position: 'top-center',
+      });
     }
   };
   return (
@@ -64,6 +69,7 @@ const ContactSection = () => {
                     id="name"
                     name="name"
                     placeholder="Your name"
+                    value={name}
                     onChange={handleChange}
                   />
                 </div>
@@ -74,6 +80,7 @@ const ContactSection = () => {
                     id="email"
                     name="email"
                     placeholder="Email"
+                    value={email}
                     onChange={handleChange}
                   />
                 </div>
@@ -85,6 +92,7 @@ const ContactSection = () => {
                     cols={30}
                     rows={10}
                     placeholder="Write your message"
+                    value={message}
                     onChange={handleChange}
                   />
                 </div>

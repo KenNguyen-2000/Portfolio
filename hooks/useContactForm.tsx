@@ -18,7 +18,15 @@ const useContactForm = () => {
     });
   };
 
-  return { values, handleChange };
+  const formReset = () => {
+    setValues({
+      email: '',
+      name: '',
+      message: '',
+    });
+  };
+
+  return { values, handleChange, formReset };
 };
 
 export default useContactForm;

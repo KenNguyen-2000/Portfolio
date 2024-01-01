@@ -7,7 +7,6 @@ export const sendEmail = async (
   name: string,
   message: string
 ) => {
-  console.log(process.env.SMTP_EMAIL, process.env.SMTP_PWD);
   const emailMessage = {
     from: process.env.SMTP_EMAIL,
     to: process.env.SMTP_EMAIL,
