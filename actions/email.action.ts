@@ -35,6 +35,7 @@ export const sendEmail = async (
   });
 
   transporter.sendMail(emailMessage, (err, info) => {
+    console.log(err);
     if (err) {
       return JSON.parse(
         JSON.stringify({
