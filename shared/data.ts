@@ -23,7 +23,7 @@ export const projects = [
     description:
       'This is an e-commerce website that allows FPT students to post old stuffs for exchanging. OSE use point system for exchange.',
     git_link: 'https://github.com/KenNguyen-2000/old-stuff-exchange',
-    project_image_path: '/old-stuffs-exchange_project.svg',
+    project_image_path: '/ose_project.jpg',
   },
 ];
 
