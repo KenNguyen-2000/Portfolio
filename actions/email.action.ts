@@ -8,7 +8,7 @@ export const sendEmail = async (
   message: string
 ) => {
   const emailMessage = {
-    from: process.env.SMTP_EMAIL,
+    from: email,
     to: process.env.SMTP_EMAIL,
     subject: 'Cooperation Inquiry - Frontend Development',
     text: message,
