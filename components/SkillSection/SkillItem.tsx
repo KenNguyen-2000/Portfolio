@@ -22,7 +22,7 @@ const SkillItem = ({ skill }: { skill: { label: string } }) => {
         </span>
         <span className="line" ref={lineRef}></span>
       </h3>
-      <p>
+      <p className="hidden">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
         voluptate quod odit excepturi nisi!
       </p>
